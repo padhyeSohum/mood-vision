@@ -4,7 +4,7 @@ from vertexai.generative_models import GenerativeModel, Part, FinishReason
 import vertexai.preview.generative_models as generative_models
 from PIL import Image
 import io
-
+previous_responses = []
 image_path = 'image.jpeg'
 image = Image.open(image_path)
 buffered = io.BytesIO()
@@ -22,7 +22,8 @@ def generate():
   )
 
   for response in responses:
-    print(response.text, end="")
+    print(responses.text)
+    return (response.text)
 
 
 
@@ -32,7 +33,7 @@ image1 = Part.from_data(
 
 )
 
-text1 = """This is an image taken from the eyes of a kid suffering with autism provide suggestions for how that kid can interact with the person in the picture include things such as facial expression and mood keep your response short thoughtful and encouraging. talk directly to the kid"""
+text1 = f"""This is an image taken from the eyes of a kid suffering with autism provide suggestions for how that kid can interact with the person in the picture include things such as facial expression and mood keep your response short thoughtful and encouraging. talk directly to the kid . Try to give him answers that are short and simple also take into context the previos answers you provided listed here {previous_responses}"""
 
 generation_config = {
     "max_output_tokens": 2048,
@@ -47,6 +48,6 @@ safety_settings = {
     generative_models.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: generative_models.HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
     generative_models.HarmCategory.HARM_CATEGORY_HARASSMENT: generative_models.HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
 }
-
-generate()
-
+previous_responses = []
+text = generate()
+previous_responses.append(text)
