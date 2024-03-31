@@ -6,7 +6,6 @@ recognizer = sr.Recognizer()
 # Function to convert speech to text
 def speech_to_text():
     with sr.Microphone() as source:
-        print("Please speak... Press 'q' and Enter to quit.")
         recognizer.adjust_for_ambient_noise(source)  # Adjust for ambient noise
         
         # Continuously listen for speech input
