@@ -11,16 +11,16 @@ python_path = sys.executable
 def index():
     return render_template('index.html')
 
-@app.route('/run_face_detection')
-def run_face_detection():
+@app.route('/run_emotion_detection')
+def run_emotion_detection():
     try:
         # Execute face-detection.py using subprocess
-        subprocess.Popen([python_path, "face-detection.py"])
+        subprocess.Popen([python_path, "emotion-detection.py"])
         return redirect(url_for('index'))
     except FileNotFoundError as e:
         # Print the error for debugging
-        print(f"Error executing face-detection.py: {e}")
-        return "Error: face-detection.py not found or unable to execute."
+        print(f"Error executing emotion-detection.py: {e}")
+        return "Error: emotion-detection.py not found or unable to execute."
 
 if __name__ == '__main__':
     app.run(debug=True)
