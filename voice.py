@@ -20,11 +20,6 @@ def speech_to_text():
                 print("Sorry, I could not understand what you said.")
             except sr.RequestError as e:
                 print("Error with the speech recognition service; {0}".format(e))
-            
-            # Check for user input in the terminal
-            user_input = input()
-            if user_input.lower() == 'q':
-                break  # Exit loop if 'q' is input
 
 # Call the function to convert speech to text
 speech_to_text()

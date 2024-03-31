@@ -34,6 +34,7 @@ image1 = Part.from_data(
 )
 
 text1 = f"""This is an image taken from the eyes of a kid suffering with autism provide suggestions for how that kid can interact with the person in the picture include things such as facial expression and mood keep your response short thoughtful and encouraging. talk directly to the kid . Try to give him answers that are short and simple also take into context the previos answers you provided listed here {previous_responses}"""
+text2 = f"Be an imaginary friend to someone with autism. Guide them mainly around understanding the emotions of the person in the picture."
 
 generation_config = {
     "max_output_tokens": 2048,
