@@ -3,22 +3,5 @@
 @tailwind utilities;
 
 body {
-    @apply bg-gray-900 text-white;
-}
-
-body.dark {
-    @apply bg-black text-white;
-}
-
-/* Navbar custom styles */
-header {
-    @apply bg-gray-900 text-white;
-}
-
-.nav-link {
-    @apply hover:underline;
-}
-
-.nav-link-active {
-    @apply text-green-500 font-bold hover:underline;
+    background-color: #373845;
 }

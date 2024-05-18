@@ -40,3 +40,31 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+header {
+  background-color: #373845; /* Matches the dark background color */
+}
+
+header a {
+  color: #FFFFFF; /* White text color */
+  text-decoration: none; /* Remove underline */
+}
+
+header a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+header .font-semibold {
+  font-size: 1.25rem; /* Matches the font size for the title */
+}
+
+header .flex > a {
+  margin-right: 2rem; /* Space between navigation items */
+}
+
+header .flex > a:last-child {
+  margin-right: 0; /* No margin for the last item */
+}
+
